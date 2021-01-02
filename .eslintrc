@@ -7,7 +7,13 @@
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx", ".json", ".vue"]
+        "extensions": [".js", ".json", ".vue"]
+      },
+      "alias": {
+        "map": [
+            ["@", "./src"]
+        ],
+        "extensions": [".js", ".json", ".vue"]
       }
     }
   }

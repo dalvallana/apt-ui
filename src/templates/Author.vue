@@ -67,7 +67,7 @@ query($id: ID!) {
 </page-query>
 
 <script>
-import PostItem from '../components/PostItem';
+import PostItem from '@/components/PostItem';
 
 export default {
   components: { PostItem },
