@@ -1,0 +1,14 @@
+{
+  "parser": "vue-eslint-parser",
+  "extends": ["airbnb-base", "plugin:gridsome/recommended", "plugin:prettier/recommended"],
+  "rules": {
+    "import/extensions": ["error", "ignorePackages", { "js": "never", "vue": "never" }]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx", ".json", ".vue"]
+      }
+    }
+  }
+}
