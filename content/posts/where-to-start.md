@@ -1,3 +1,13 @@
+---
+title: Where to Start
+author: chad-collins
+tags:
+  - Development
+excerpt: A quick guide on how to begin using this starter.
+date: 2020-07-30T19:22:21.943Z
+featuredImage: uploads/class-with-chad.png
+---
+
 # Gridsome Starter with Netlify CMS & Buefy
 
 ## See it Live
@@ -29,8 +39,8 @@ https://gridsome-starter.chadcollins.net
 2. `cd my-blog` to open the folder
 3. `gridsome develop` to start a local dev server at `http://localhost:8080`
 
-4. Enable Github Oauth
+   ``
 
-5. Enable netlify identity
+   ``
 
-6. Change Repo info at top of admin/config.yml to your own repo.
+   ``

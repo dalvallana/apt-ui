@@ -1,86 +1,139 @@
 <template>
-  <Layout>
-    <div class="container">
-      <h1>List articles</h1>
-      <div
-        v-for="article in $page.articles.edges"
-        :key="article.id"
-        class="article d-flex"
-      >
-        <div
-          class="article__img"
-          :style="{ 'background-image': 'url(' + article.node.image + ')' }"
-        ></div>
-        <div class="article__body">
-          <g-link :to="article.node.path" class="article__link"></g-link>
-          <h1 class="article__title">{{ article.node.title }}</h1>
-          <p class="article__abstract">{{ article.node.abstract }}</p>
+  <Layout pageTitle="Starter Blog" pageSubtitle="Gridsome / Buefy / Netlify CMS">
+    <div class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column"></div>
+          <div class="column cards-grid is-four-fifths">
+            <article class="card grid-item" v-for="edge in $page.posts.edges" :key="edge.node.id">
+              <div class="card-image">
+                <g-link :to="edge.node.path">
+                  <figure class="image is-16by9">
+                    <img
+                      :src="`../../${edge.node.featuredImage}`"
+                      :alt="`${edge.node.title} image`"
+                    />
+                  </figure>
+                </g-link>
+              </div>
+
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-left">
+                    <g-link :to="edge.node.author.path">
+                      <figure class="image is-48x48">
+                        <img :src="`../../${edge.node.author.image}`" alt="Placeholder image" />
+                      </figure>
+                    </g-link>
+                  </div>
+                  <div class="media-content">
+                    <h2 class="title is-4">
+                      <g-link :to="edge.node.path">
+                        {{ edge.node.title }}
+                      </g-link>
+                    </h2>
+                    <p class="subtitle is-6">
+                      <g-link :to="edge.node.author.path">
+                        {{ edge.node.author.title }}
+                      </g-link>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="content">
+                  {{ edge.node.excerpt }}
+                </div>
+
+                <div>
+                  <span v-for="(tag, index) in edge.node.tags" :key="tag.id">
+                    <div class="tag">
+                      <g-link :to="tag.path">
+                        {{ tag.id }}
+                      </g-link>
+                    </div>
+
+                    <!-- We will add a comma separator for the tags -->
+                    <span v-if="index + 1 < edge.node.tags.length">
+                      ,
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+          </div>
+          <div class="column"></div>
         </div>
       </div>
     </div>
   </Layout>
 </template>
+
 <page-query>
-query {
-  articles: allArticles {
-    edges {
-      node {
-        title
-        abstract
-        image
-        path
+  query {
+    posts: allPost {
+      edges {
+        node {
+          id
+          title
+          path
+          excerpt
+          featuredImage
+          author {
+            id
+            title
+            path
+            image
+          }
+          tags {
+            id
+            path
+          }
+        }
       }
     }
   }
-}
 </page-query>
+
 <script>
 export default {
   metaInfo: {
-    title: 'My blog',
+    title: 'Home',
   },
 };
 </script>
+
 <style>
-.article {
-  display: flex;
-  align-items: center;
-  box-shadow: 5px 5px 11px rgba(0, 0, 0, 0.15);
-  border-radius: 8px;
-  position: relative;
-  margin-top: 50px;
-  background-color: #fff;
+.card {
+  margin-bottom: 1.5rem;
 }
-@media screen and (max-width: 992px) {
-  .article {
-    display: block;
+
+.cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Mobile First */
+.grid-item {
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+}
+/*Medium Width */
+@media screen and (min-width: 740px) {
+  .grid-item {
+    width: calc((100% / 2) - 30px);
   }
 }
-.article__title {
-  margin-top: 0;
-}
-.article__body {
-  padding: 15px 30px;
-}
-.article__link {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-}
-.article__img {
-  width: 250px;
-  height: 140px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 8px;
-  margin-right: 15px;
-}
-@media screen and (max-width: 992px) {
-  .article__img {
-    width: 100%;
-    height: 180px;
+/*Wide Width */
+@media screen and (min-width: 991px) {
+  .grid-item {
+    width: calc((100% / 3) - 30px);
   }
 }
 </style>
