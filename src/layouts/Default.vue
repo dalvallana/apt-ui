@@ -38,6 +38,7 @@ query {
 
 <script>
 import Navbar from '../components/Navbar';
+
 export default {
   props: { pageTitle: '', pageSubtitle: '', color: '' },
   components: { Navbar },

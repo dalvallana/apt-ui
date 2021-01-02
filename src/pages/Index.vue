@@ -53,9 +53,7 @@
                     </div>
 
                     <!-- We will add a comma separator for the tags -->
-                    <span v-if="index + 1 < edge.node.tags.length">
-                      ,
-                    </span>
+                    <span v-if="index + 1 < edge.node.tags.length"> , </span>
                   </span>
                 </div>
               </div>
@@ -72,29 +70,29 @@
 </template>
 
 <page-query>
-  query {
-    posts: allPost {
-      edges {
-        node {
+query {
+  posts: allPost {
+    edges {
+      node {
+        id
+        title
+        path
+        excerpt
+        featuredImage
+        author {
           id
           title
           path
-          excerpt
-          featuredImage
-          author {
-            id
-            title
-            path
-            image
-          }
-          tags {
-            id
-            path
-          }
+          image
+        }
+        tags {
+          id
+          path
         }
       }
     }
   }
+}
 </page-query>
 
 <script>

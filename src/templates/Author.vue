@@ -29,46 +29,46 @@
 </template>
 
 <page-query>
- query($id: ID!) {
-    author(id: $id) {
-      title
-      path
-      image
-      blurb
-      content
-      belongsTo {
-        totalCount
-        pageInfo {
-          totalPages
-          currentPage
-        }
-        edges {
-          node {
-            ... on Post {
+query($id: ID!) {
+  author(id: $id) {
+    title
+    path
+    image
+    blurb
+    content
+    belongsTo {
+      totalCount
+      pageInfo {
+        totalPages
+        currentPage
+      }
+      edges {
+        node {
+          ... on Post {
+            id
+            title
+            excerpt
+            featuredImage
+            path
+            content
+            date(format: "MMMM Do YYYY")
+            author {
               id
               title
-              excerpt
-              featuredImage
+              image
               path
-              content
-              date(format:"MMMM Do YYYY")
-              
-          
-              author {
-                id
-                title
-                image
-                path
-              }
             }
           }
         }
       }
-    }  
+    }
   }
+}
 </page-query>
+
 <script>
 import PostItem from '../components/PostItem';
+
 export default {
   components: { PostItem },
 };
