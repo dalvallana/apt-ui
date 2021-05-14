@@ -39,9 +39,10 @@ module.exports = {
     },
     // Netlify CMS Plugin
     {
-      use: `gridsome-plugin-netlify-cms`,
+      use: 'gridsome-plugin-netlify-cms',
       options: {
-        publicPath: `/admin`,
+        publicPath: '/cms',
+        htmlTitle: 'ApT CMS',
       },
     },
   ],
