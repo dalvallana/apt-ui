@@ -1,6 +1,6 @@
 <template>
   <Layout pageTitle="Starter Blog" pageSubtitle="Gridsome / Buefy / Netlify CMS">
-    <div class="section">
+    <section class="section">
       <div class="container">
         <div class="columns">
           <div class="column"></div>
@@ -65,7 +65,7 @@
           <div class="column"></div>
         </div>
       </div>
-    </div>
+    </section>
   </Layout>
 </template>
 

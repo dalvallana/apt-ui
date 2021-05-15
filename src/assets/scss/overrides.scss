@@ -63,6 +63,8 @@ $link-focus-border: $primary;
 // Navbar
 $navbar-background-color: $primary;
 $navbar-item-color: white;
+$navbar-box-shadow-size: 0 1px 4px 0;
+$navbar-box-shadow-color: $dark;
 
 // Import Bulma and Buefy styles
 @import '~bulma';

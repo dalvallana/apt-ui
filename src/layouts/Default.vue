@@ -1,5 +1,5 @@
 <template>
-  <div class="layout">
+  <div>
     <Navbar />
     <section class="hero is-medium is-primary">
       <div class="hero-body">
@@ -49,10 +49,18 @@ export default {
 @import '@/assets/scss/overrides.scss';
 
 body {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
-    Arial, sans-serif;
+  font-family: Newsreader, 'Times New Roman', serif;
   margin: 0;
   padding: 0;
   line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Montserrat, 'Helvetica Neue', sans-serif;
 }
 </style>
