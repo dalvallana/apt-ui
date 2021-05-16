@@ -1,7 +1,7 @@
 <template>
   <div>
     <Navbar />
-    <section class="hero is-medium is-primary">
+    <section class="hero is-medium is-light">
       <div class="hero-body">
         <div class="container">
           <h1 class="title is-1">
@@ -19,9 +19,8 @@
     <footer class="footer">
       <div class="content has-text-centered">
         <p>
-          Created by <a href="chadcollins.net"><strong>Chad Collins</strong></a
-          >. Powered by <a href="https://gridsome.org/"><strong>Gridsome</strong></a
-          >.
+          Created by <a href="chadcollins.net">Chad Collins</a>. Powered by
+          <a href="https://gridsome.org/">Gridsome</a>.
         </p>
       </div>
     </footer>
@@ -62,5 +61,9 @@ h4,
 h5,
 h6 {
   font-family: Montserrat, 'Helvetica Neue', sans-serif;
+}
+
+a {
+  font-weight: 700;
 }
 </style>
