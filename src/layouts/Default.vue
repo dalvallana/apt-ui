@@ -16,7 +16,7 @@
     <main>
       <slot />
     </main>
-    <footer class="footer">
+    <footer class="footer footer__shadow">
       <div class="content has-text-centered">
         <p>
           Created by <a href="chadcollins.net">Chad Collins</a>. Powered by
@@ -65,5 +65,9 @@ h6 {
 
 a {
   font-weight: 700;
+}
+
+.footer__shadow {
+  box-shadow: inset 0 10px 20px -10px #ccc;
 }
 </style>
