@@ -1,11 +1,22 @@
+// Set your colors
+$primary: hsl(137, 31%, 49%);
+$link: $primary;
+
 // Import Bulma's core
 @import '~bulma/sass/utilities/_all';
 
-// Set your colors
-$primary: #57a46d;
-$primary-light: findLightColor($primary);
-$primary-dark: findDarkColor($primary);
-$primary-invert: findColorInvert($primary);
+// Override values not dependent on initial variables
+
+// Links
+$link-hover: $link-dark;
+
+// Navbar
+$navbar-background-color: $white;
+$navbar-box-shadow-size: 0 10px 20px -10px;
+$navbar-box-shadow-color: $grey-light;
+
+// Footer
+$footer-background-color: $primary-light;
 
 // Setup $colors to use as bulma classes (e.g. 'is-twitter')
 $colors: (
@@ -46,19 +57,6 @@ $colors: (
     $danger-invert,
   )
 );
-
-// Links
-$link: $primary;
-$link-dark: findDarkColor($link);
-$link-light: findLightColor($link);
-$link-hover: $link-dark;
-
-// Navbar
-$navbar-background-color: $white;
-$navbar-box-shadow-size: 0 10px 20px -10px;
-$navbar-box-shadow-color: $grey-light;
-
-$footer-background-color: $primary-light;
 
 // Import Bulma and Buefy styles
 @import '~bulma';

@@ -1,6 +1,7 @@
 <template>
   <div>
     <Navbar />
+    <div class="navbar__placeholder"></div>
     <section class="hero is-medium is-light">
       <div class="hero-body">
         <div class="container">
@@ -16,7 +17,7 @@
     <main>
       <slot />
     </main>
-    <footer class="footer footer__shadow">
+    <footer class="footer footer__custom">
       <div class="content has-text-centered">
         <p>
           Created by <a href="chadcollins.net">Chad Collins</a>. Powered by
@@ -67,7 +68,26 @@ a {
   font-weight: 700;
 }
 
-.footer__shadow {
-  box-shadow: inset 0 10px 20px -10px #ccc;
+.navbar__placeholder {
+  height: 52px;
+}
+
+.footer__custom {
+  box-shadow: inset 0 10px 20px -10px #333;
+  background: hsl(137, 31%, 49%);
+  background: linear-gradient(
+    135deg,
+    hsl(137, 31%, 49%) 0%,
+    hsl(171, 100%, 41%) 50%,
+    hsl(217, 71%, 53%) 100%
+  );
+
+  a {
+    color: inherit;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 </style>

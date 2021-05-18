@@ -1,5 +1,5 @@
 <template>
-  <b-navbar fixed-top shadow>
+  <b-navbar fixed-top shadow wrapper-class="container">
     <template slot="brand">
       <b-navbar-item tag="router-link" :to="{ path: '/' }">
         <img
