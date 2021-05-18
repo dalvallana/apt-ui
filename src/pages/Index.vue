@@ -1,5 +1,5 @@
 <template>
-  <Layout pageTitle="Starter Blog" pageSubtitle="Gridsome / Buefy / Netlify CMS">
+  <Layout pageTitle="Starter Blog" pageSubtitle="Gridsome / Buefy / Netlify CMS" :hero="true">
     <section class="section">
       <div class="container">
         <div class="columns">

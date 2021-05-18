@@ -1,5 +1,5 @@
 <template>
-  <b-navbar fixed-top shadow wrapper-class="container">
+  <b-navbar :fixed-top="!hero" :shadow="!hero" wrapper-class="container">
     <template slot="brand">
       <b-navbar-item tag="router-link" :to="{ path: '/' }">
         <img
@@ -17,3 +17,9 @@
     <template slot="end"> </template>
   </b-navbar>
 </template>
+
+<script>
+export default {
+  props: { hero: false },
+};
+</script>

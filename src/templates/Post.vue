@@ -1,10 +1,20 @@
 <template>
-  <Layout :pageTitle="$page.post.title">
-    <section class="section is-size-5">
-      <div class="post__container">
-        <div class="content">
-          <div v-html="$page.post.content"></div>
+  <Layout>
+    <section class="hero is-medium">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title is-1">
+            {{ $page.post.title }}
+          </h1>
+          <h2 v-if="excerpt" class="subtitle">
+            {{ excerpt }}
+          </h2>
         </div>
+      </div>
+    </section>
+    <section class="post__container mb-6">
+      <div class="content is-size-5">
+        <div v-html="$page.post.content"></div>
       </div>
     </section>
   </Layout>

@@ -1,10 +1,15 @@
 <template>
   <div>
-    <Navbar />
-    <div class="navbar__placeholder"></div>
-    <section class="hero is-medium is-light">
+    <template v-if="!hero">
+      <Navbar />
+      <div class="navbar__placeholder"></div>
+    </template>
+    <section class="hero is-medium is-primary" v-if="hero">
+      <div class="hero-head">
+        <Navbar :hero="true" />
+      </div>
       <div class="hero-body">
-        <div class="container">
+        <div class="container has-text-centered">
           <h1 class="title is-1">
             {{ pageTitle }}
           </h1>
@@ -14,7 +19,7 @@
         </div>
       </div>
     </section>
-    <main>
+    <main class="main">
       <slot />
     </main>
     <footer class="footer footer__custom">
@@ -40,7 +45,7 @@ query {
 import Navbar from '@/components/Navbar';
 
 export default {
-  props: { pageTitle: '', pageSubtitle: '', color: '' },
+  props: { pageTitle: '', pageSubtitle: '', hero: false },
   components: { Navbar },
 };
 </script>
@@ -66,6 +71,10 @@ h6 {
 
 a {
   font-weight: 700;
+}
+
+main {
+  min-height: calc(100vh - 52px);
 }
 
 .navbar__placeholder {
