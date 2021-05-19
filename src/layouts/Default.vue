@@ -1,13 +1,10 @@
 <template>
   <div>
-    <template v-if="!hero">
+    <template>
       <Navbar />
       <div class="navbar__placeholder"></div>
     </template>
     <section class="hero is-medium is-primary" v-if="hero">
-      <div class="hero-head">
-        <Navbar :hero="true" />
-      </div>
       <div class="hero-body">
         <div class="container has-text-centered">
           <h1 class="title is-1">
@@ -54,19 +51,19 @@ export default {
 @import '@/assets/scss/overrides.scss';
 
 body {
-  font-family: Newsreader, 'Times New Roman', serif;
+  font-family: Montserrat, 'Helvetica Neue', sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.5;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: Montserrat, 'Helvetica Neue', sans-serif;
+// tweak to solve bug with class .has-navbar-fixed-top not always being applied
+body.has-navbar-fixed-top .navbar__placeholder {
+  display: none;
+}
+
+p {
+  font-family: Newsreader, 'Times New Roman', serif;
 }
 
 a {
@@ -82,7 +79,7 @@ main {
 }
 
 .footer__custom {
-  box-shadow: inset 0 10px 20px -10px #333;
+  box-shadow: inset 0 10px 20px -10px $grey-darker;
   background: hsl(137, 31%, 49%);
   background: linear-gradient(
     135deg,
