@@ -6,13 +6,13 @@
           <h1 class="title is-1">
             {{ $page.post.title }}
           </h1>
-          <h2 v-if="excerpt" class="subtitle">
-            {{ excerpt }}
+          <h2 v-if="$page.post.excerpt" class="subtitle">
+            {{ $page.post.excerpt }}
           </h2>
         </div>
       </div>
     </section>
-    <section class="post__container mb-6">
+    <section class="section post__container">
       <div class="content is-size-5">
         <div v-html="$page.post.content"></div>
       </div>
@@ -43,6 +43,27 @@ query blog($path: String) {
   &__container {
     max-width: 675px;
     margin: auto;
+
+    & /deep/ .post__anchor {
+      display: none;
+      margin-left: -0.8em;
+      padding-right: 0.1em;
+      width: 0.8em;
+      height: 0.8em;
+    }
+
+    & /deep/ h1,
+    & /deep/ h2,
+    & /deep/ h3,
+    & /deep/ h4,
+    & /deep/ h5,
+    & /deep/ h6 {
+      &:hover {
+        .post__anchor {
+          display: inline;
+        }
+      }
+    }
   }
 }
 </style>
