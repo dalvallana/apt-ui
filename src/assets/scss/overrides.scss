@@ -1,63 +1,23 @@
-// Set your colors
-$primary: hsl(137, 31%, 49%);
-$link: $primary;
-
-// Import Bulma's core
-@import '~bulma/sass/utilities/_all';
-
 // Override values not dependent on initial variables
 
-// Links
-$link-hover: $link-dark;
-
 // Navbar
-$navbar-background-color: $white;
 $navbar-box-shadow-size: 0 10px 20px -10px;
-$navbar-box-shadow-color: $grey-darker;
-
-// Footer
-$footer-background-color: $primary-light;
-
-// Setup $colors to use as bulma classes (e.g. 'is-twitter')
-$colors: (
-  'white': (
-    $white,
-    $black,
-  ),
-  'black': (
-    $black,
-    $white,
-  ),
-  'light': (
-    $light,
-    $light-invert,
-  ),
-  'dark': (
-    $dark,
-    $dark-invert,
-  ),
-  'primary': (
-    $primary,
-    $primary-invert,
-  ),
-  'info': (
-    $info,
-    $info-invert,
-  ),
-  'success': (
-    $success,
-    $success-invert,
-  ),
-  'warning': (
-    $warning,
-    $warning-invert,
-  ),
-  'danger': (
-    $danger,
-    $danger-invert,
-  )
-);
 
 // Import Bulma and Buefy styles
-@import '~bulma';
+@import '@/assets/scss/main.scss';
 @import '~buefy/src/scss/buefy';
+
+:root {
+  --link-hover: var(--primary--dark-color);
+  --navbar-background-color: var(--scheme-main);
+}
+
+:root[data-theme='dark'] {
+  --scheme-main: hsl(137, 5%, 19%);
+  --scheme-main-bis: hsl(137, 5%, 27%);
+  --background: hsl(137, 5%, 29%);
+  --text: hsl(0, 0%, 79%);
+  --border: hsl(137, 5%, 39%);
+  --navbar-box-shadow-color: var(--black);
+  --navbar-dropdown-item-hover-color: hsl(0, 0%, 96%);
+}

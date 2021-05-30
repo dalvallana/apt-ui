@@ -50,11 +50,16 @@ export default {
 <style lang="scss">
 @import '@/assets/scss/overrides.scss';
 
+* {
+  transition: background-color 0.1s ease, color 0.1s ease;
+}
+
 body {
   font-family: Montserrat, 'Helvetica Neue', sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.5;
+  background-color: var(--background-color);
 }
 
 // tweak to solve bug with class .has-navbar-fixed-top not always being applied
@@ -95,5 +100,16 @@ main {
       text-decoration: underline;
     }
   }
+}
+
+:root[data-theme='dark'] .footer__custom {
+  box-shadow: inset 0 10px 20px -10px $black;
+  background: hsl(137, 31%, 29%);
+  background: linear-gradient(
+    135deg,
+    hsl(137, 31%, 29%) 0%,
+    hsl(171, 100%, 21%) 50%,
+    hsl(217, 71%, 33%) 100%
+  );
 }
 </style>

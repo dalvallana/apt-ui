@@ -44,7 +44,7 @@ query blog($path: String) {
     max-width: 675px;
     margin: auto;
 
-    & /deep/ .post__anchor {
+    &::v-deep .post__anchor {
       display: none;
       margin-left: -0.8em;
       padding-right: 0.1em;
@@ -52,12 +52,12 @@ query blog($path: String) {
       height: 0.8em;
     }
 
-    & /deep/ h1,
-    & /deep/ h2,
-    & /deep/ h3,
-    & /deep/ h4,
-    & /deep/ h5,
-    & /deep/ h6 {
+    &::v-deep h1,
+    &::v-deep h2,
+    &::v-deep h3,
+    &::v-deep h4,
+    &::v-deep h5,
+    &::v-deep h6 {
       &:hover {
         .post__anchor {
           display: inline;
