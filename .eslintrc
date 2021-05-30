@@ -1,4 +1,5 @@
 {
+  "browser": true,
   "parser": "vue-eslint-parser",
   "extends": ["airbnb-base", "plugin:gridsome/recommended", "plugin:prettier/recommended"],
   "rules": {
